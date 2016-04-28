@@ -26,5 +26,6 @@ object parser {
   def getURL(url: String): Try[URL] = { Try(new URL(url)) }
   
   def inputStreamForURL(url:String): Try[InputStream] = getURL(url).flatMap(u =>
-    Try(u.openConnection()).flatMap(conn => Try(conn.getInputStream())))
+    Try(u.openConnection()).flatMap(conn => Try(conn.getInputStream()).map(result => result)))
+
 }
