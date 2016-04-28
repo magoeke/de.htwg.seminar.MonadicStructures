@@ -8,7 +8,7 @@ object foo {
   def main(args: Array[String]) {
     val foo = new Foo;
     
-    // NullPointerException is wanted!
+    // NullPointerException normally unwanted but in this example provoked
     foo.bar.baz.compute 
   }
 }
