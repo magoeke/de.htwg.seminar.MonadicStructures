@@ -10,8 +10,14 @@ object breeder {
     hans.getPet.getBreeder.getName
 
     var moritz = new PetOwner(null)
-    // This creates an NullPointerException.
-    // Same Problem as in foo
-    moritz.getPet.getBreeder.getName    
+    // nested if to avoid NullPointerException
+    // other possible solution is try catch
+    if(moritz.getPet != null) {
+      if(moritz.getPet.getBreeder != null) {
+        moritz.getPet.getBreeder.getName
+      } else
+        null
+    } else
+      null    
   }
 }
