@@ -17,5 +17,12 @@ object breeder {
     
     findOutPet(hans)
     findOutPet(moritz)
+    
+    //Add some output for understanding
+    println(findOutPet(moritz))     // None
+    findOutPet(moritz).map(println) // ""
+    println(findOutPet(hans))       // Some(Georg)
+    findOutPet(hans).map(println)   // Georg
+    
   }
 }
