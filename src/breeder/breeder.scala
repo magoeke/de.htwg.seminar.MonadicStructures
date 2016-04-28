@@ -20,7 +20,9 @@ object breeder {
   }
   
   def getBreeder(petOwner: PetOwner): Option[String] = {
-    petOwner.getPet.flatMap(pet => 
-      pet.getBreeder.map( breeder => breeder.getName))
+    for {
+      pet <- petOwner.getPet
+      breeder <- pet.getBreeder
+    } yield breeder.getName
   }
 }
